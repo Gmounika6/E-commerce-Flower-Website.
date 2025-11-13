@@ -26,7 +26,7 @@ section{
     color:#333 ;
     padding:1rem;
     margin: 2rem 0;
-    background: rgba(255,51,153,.05);
+    background: rgba(255,51,153,.08);
 }
 .heading span{
     color: var(--pink);
@@ -55,6 +55,7 @@ header{
     justify-content: space-between;
     z-index: 1000;
     box-shadow: 0 .5rem 1rem rgb(0,0,0,.1);/*adds soft shadaow below header*/
+    background-color:rgb(246, 242, 244);
 }
 header .logo{
     font-size: 3rem;
@@ -387,6 +388,115 @@ The image smoothly zooms in*/
 }
 
 
+/*cart page css*/
+.cart-page .heading{
+    margin-top:8rem;
+}
+.cart-page .box-container{
+    display: flex;
+    gap: 1.5rem;
+    flex-direction: column;
+}
+.cart-page .box-container .empty-cart{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    line-height:2;
+}
+.cart-page .box-container .empty-cart span{
+    font-size: 3rem;
+    font-family:cursive ;
+    color: var(--pink);
+}
+.cart-page .box-container .empty-cart p{
+    font-size: 2.4rem;
+}
+.cart-page .box-container .empty-cart img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*pop up message*/
+.popup{
+    display: none;
+    color: #333;
+    border-radius:.5rem;
+    position: fixed;
+    top:2rem;
+    left:50%;
+    transform:translate(-50%) ;
+    max-width:90% ;
+    z-index: 1000;
+    font-size: 1.8rem;
+    background: #f6c7dd;
+    padding: 1.8rem;
+    text-align: center;
+    line-height:2;
+}
+.popup.show{
+    display:block;
+}
+
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  gap: 2rem;
+  background: #fff;
+}
+
+.cart-item img {
+  width: 220px;
+  height: 200px;
+  border-radius: .5rem;
+  object-fit:contain;
+}
+
+.cart-info h3 {
+  font-size: 3rem;
+  color: #333;
+  margin-top: 2rem;
+}
+
+.cart-info p {
+  font-size: 2rem;
+  color: var(--pink);
+  margin-top: 2rem;
+}
+
+.remove-btn {
+  background: var(--pink);
+  border: none;
+  color: #fff;
+  padding: .8rem 1.5rem;
+  border-radius: .5rem;
+  font-size: 1.8rem;
+  position:relative;
+  margin-top: 3rem;
+}
+
+.remove-btn:hover {
+  background: #333;
+}
+.cart-item .cart-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+}
+
+.cart-item .cart-info {
+    flex: 1;
+    position: relative;
+    padding-bottom: 2rem; /* space so button doesn’t overlap text */
+}
+
+
+
 
 
 
@@ -417,13 +527,13 @@ The image smoothly zooms in*/
         border-top: .1rem solid rgba(0,0,0,.1);
         clip-path: polygon(0 0,100% 0,100% 0, 0 0);/*used to hide the parts here navbar is invisible here it's area is just flat line when user clicks memu bar it change it dimensions to rectangel  */
     }
-    header #toggler:checked ~ .navbar{
+    header .navbar.menubar{
         clip-path: polygon(0 0,100% 0,100% 100%,0% 100%);/*nav bar is visible in full box top-left corner, top right, bottom-right, bottom-left 0-start of side, 100% end of side x,y axis*/
     }
     header .navbar a{
         margin: 1.5rem;
         padding: 1.5rem;
-        background: #fff;
+        background:rgba(255,51,153,.05);
         border: .1rem solid rgba(0,0,0,.1);
         display: block;
     }
@@ -438,6 +548,15 @@ The image smoothly zooms in*/
 }
 .icons-container .icons span{
     font-size: 1.7rem;
+}
+.cart-page .box-container .empty-cart span{
+    font-size: 1.7rem;
+}
+.cart-page .box-container .empty-cart p{
+    font-size: 1.5rem;
+}
+.popup{
+    padding: 1rem;
 }
 
 }

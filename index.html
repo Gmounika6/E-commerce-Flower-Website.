@@ -6,6 +6,7 @@
     <title>E-commerce flower shop</title>
     <!-- font style links from cdnjs-->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+     <link rel="stylesheet" href=""
     <!-- custom css file link-->
      <link rel="stylesheet" href="styles.css">
      <!--Link to include bootstamp icons-->
@@ -29,7 +30,7 @@
 </nav>
 <div class="icons">
     <a href="#"><i class="bi bi-suit-heart-fill"></i></a>
-    <a href="#"><i class="bi bi-cart-fill"></i></a>
+    <a href="cart.html"><i class="bi bi-cart-fill"></i></a>
     <a href="#"><i class="bi bi-person-circle"></i></a>
 </div>
     </header>
@@ -89,6 +90,7 @@
     </div>
 </section>
 <!--products section-->
+<div class="popup" id="popup-message">Bloom added <br>your cart just got prettier💗</div>
 <section class="products" id="products">
     <h1 class="heading">latest <span>products</span></h1>
     <div class="box-container">
@@ -98,7 +100,7 @@
                 <img src="./images/flower pot.jpg" alt="flower pot">
                 <div class="icons">
                     <a href="#"><i class="bi bi-heart-fill"></i></a>
-                    <a href="#"><i class="bi bi-bag-heart-fill"></i></a>
+                    <a class="add-to-cart"><i class="bi bi-bag-heart-fill"></i></a>
                     <a href="#"><i class="bi bi-share-fill"></i></a>
                 </div>
             </div>
@@ -114,7 +116,7 @@
                 <img src="./images/red roses.jpg" alt="red roses">
                 <div class="icons">
                     <a href="#"><i class="bi bi-heart-fill"></i></a>
-                    <a href="#"><i class="bi bi-bag-heart-fill"></i></a>
+                    <a class="add-to-cart"><i class="bi bi-bag-heart-fill"></i></a>
                     <a href="#"><i class="bi bi-share-fill"></i></a>
                 </div>
             </div>
@@ -130,7 +132,7 @@
                 <img src="./images/white roses.jpg" alt="white roses">
                 <div class="icons">
                     <a href="#"><i class="bi bi-heart-fill"></i></a>
-                    <a href="#"><i class="bi bi-bag-heart-fill"></i></a>
+                    <a class="add-to-cart"><i class="bi bi-bag-heart-fill"></i></a>
                     <a href="#"><i class="bi bi-share-fill"></i></a>
                 </div>
             </div>
@@ -146,7 +148,7 @@
                 <img src="./images/mixed flowers.jpg" alt="bouquet">
                 <div class="icons">
                     <a href="#"><i class="bi bi-heart-fill"></i></a>
-                    <a href="#"><i class="bi bi-bag-heart-fill"></i></a>
+                    <a class="add-to-cart"><i class="bi bi-bag-heart-fill"></i></a>
                     <a href="#"><i class="bi bi-share-fill"></i></a>
                 </div>
             </div>
@@ -162,7 +164,7 @@
                 <img src="./images/pink rose.jpg" alt="baby pink roses">
                 <div class="icons">
                     <a href="#"><i class="bi bi-heart-fill"></i></a>
-                    <a href="#"><i class="bi bi-bag-heart-fill"></i></a>
+                    <a class="add-to-cart"><i class="bi bi-bag-heart-fill"></i></a>
                     <a href="#"><i class="bi bi-share-fill"></i></a>
                 </div>
             </div>
@@ -178,7 +180,7 @@
                 <img src="./images/tulips.jpg" alt="tulips">
                 <div class="icons">
                     <a href="#"><i class="bi bi-heart-fill"></i></a>
-                    <a href="#"><i class="bi bi-bag-heart-fill"></i></a>
+                    <a class="add-to-cart"><i class="bi bi-bag-heart-fill"></i></a>
                     <a href="#"><i class="bi bi-share-fill"></i></a>
                 </div>
             </div>
@@ -194,7 +196,7 @@
                 <img src="./images/lotus.jpg" alt="lotus">
                 <div class="icons">
                     <a href="#"><i class="bi bi-heart-fill"></i></a>
-                    <a href="#"><i class="bi bi-bag-heart-fill"></i></a>
+                    <a class="add-to-cart"><i class="bi bi-bag-heart-fill"></i></a>
                     <a href="#"><i class="bi bi-share-fill"></i></a>
                 </div>
             </div>
@@ -210,7 +212,7 @@
                 <img src="./images/marigold.jpg" alt="flower pot">
                 <div class="icons">
                     <a href="#"><i class="bi bi-heart-fill"></i></a>
-                    <a href="#"><i class="bi bi-bag-heart-fill"></i></a>
+                    <a class="add-to-cart"><i class="bi bi-bag-heart-fill"></i></a>
                     <a href="#"><i class="bi bi-share-fill"></i></a>
                 </div>
             </div>
@@ -226,7 +228,7 @@
                 <img src="./images/chamanthi.jpg" alt="flower pot">
                 <div class="icons">
                     <a href="#"><i class="bi bi-heart-fill"></i></a>
-                    <a href="#"><i class="bi bi-bag-heart-fill"></i></a>
+                    <a class="add-to-cart"><i class="bi bi-bag-heart-fill"></i></a>
                     <a href="#"><i class="bi bi-share-fill"></i></a>
                 </div>
             </div>
@@ -299,10 +301,10 @@
     <h1 class="heading"><span>contact </span>us</h1>
     <div class="row">
         <form action="">
-            <input type="text" placeholder="name" class="box">
-            <input type="email" placeholder="email" class="box">
-            <input type="number" placeholder="number" class="box">
-            <textarea name="" class="box" placeholder="message" id="" cols="30" rows="10"></textarea>
+            <input type="text" placeholder="Name" class="box">
+            <input type="email" placeholder="Email" class="box">
+            <input type="number" placeholder="Number" class="box">
+            <textarea name="" class="box" placeholder="Message" id="" cols="30" rows="10"></textarea>
             <input type="submit" value="send message" class="btn">
         </form>
         <div class="image">
@@ -341,7 +343,9 @@
             <img src="./images/paypal.jpg" alt="payments">
         </div>
     </div>
-    <div class="credit">created by <span>miss. Mounika</span>|all rights reserved</div>
+    <div class="credit">created by <span>miss. Mounika </span>|all rights reserved</div>
 </section>
+<!--java script code-->
+<script src="script.js" charset="UTF-8"></script>
 </body>
 </html>

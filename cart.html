@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart page</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+</head>
+<body>
+    <header>
+    <input type="checkbox" id="toggler" />
+    <label for="toggler"><i class="bi bi-list"></i></label>
+    <a href="index.html" class="logo">Flower <i class="bi bi-flower3" style="color: palevioletred;"></i></a>
+
+    <nav class="navbar">
+      <a href="index.html#home">home</a>
+      <a href="index.html#about">about</a>
+      <a href="index.html#products">products</a>
+      <a href="index.html#review">review</a>
+      <a href="index.html#contact">contact</a>
+    </nav>
+
+    <div class="icons">
+      <a href="#"><i class="bi bi-suit-heart-fill"></i></a>
+      <a href="cart.html"><i class="bi bi-cart-fill"></i></a>
+      <a href="#"><i class="bi bi-person-circle"></i></a>
+    </div>
+  </header>
+  <section class="cart-page">
+    <h1 class="heading">your <span>cart</span></h1>
+    <div class="box-container">
+      <div class="empty-cart">
+        <img src="./images/cart.png" alt="empty cart">
+        <p class="cart-message">“ Your cart is empty as a vase without flowers, but your heart doesn’t have to be <br><span>fill it with a little floral happiness.</span>”</p>
+      </div>
+    </div>
+  </section>
+<script>
+  //DOMcontentloaded ensures the code runs after the html structure has been completely loaded into memory 
+  document.addEventListener("DOMContentLoaded",function(){
+    const boxContainer = document.querySelector(".box-container");
+    const emptyCart=document.querySelector(".empty-cart");
+    const cart=JSON.parse(localStorage.getItem("cart"))||[];
+    if(cart.length===0){
+      emptyCart.style.display="flex";
+      return 0;
+    }
+    emptyCart.style.display="none";
+    //every item that is added in cart a div is created images and names are shown 
+    cart.forEach(item => {
+      const div=document.createElement("div");
+      div.classList.add("cart-item");
+      div.innerHTML=`
+      <div class="cart-box">
+        <img src="${item.image}" alt="${item.name}" class="cart-img" >
+        <div class="cart-info">
+          <h3>${item.name}</h3>
+          <p>${item.price}</p>
+          <button class="remove-btn">Remove</button>
+        </div>
+      </div>
+      `;
+      boxContainer.appendChild(div);
+    });
+    //adding remove button functionality
+    document.querySelectorAll(".remove-btn").forEach(btn=>{
+      btn.addEventListener("click",function(){
+        const itemName=this.parentElement.querySelector("h3").textContent;
+        let cart=JSON.parse(localStorage.getItem("cart"))||[];
+        cart=cart.filter(i=>i.name!==itemName);//filter creates a new array that keeps only the items whose name doesn't match itemName
+        localStorage.setItem("cart",JSON.stringify(cart));//under the same cart key updated cart array is stored in local storage
+        this.closest(".cart-item").remove();//closest find the div that contains the item to be deleted,remove deletes from html
+        if(cart.length===0){
+          emptyCart.style.display="flex";
+        }
+      });
+    });
+  });
+</script>
+<script src="script.js" charset="UTF-8"></script>
+</body>
+</html>
